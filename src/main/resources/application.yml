@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/jpashop
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: create  #자동으로 테이블 생성
+    properties:
+      hibernate:
+        #show_sql: true    #hibernate가 db에 날리는 모든 쿼리를 보여준다
+        format_sql: ture  #보여지는 쿼리를 예쁘게 포맷팅해준다
+
+logging:
+  level:
+    org.hibernate.SQL: debug     #hibernate가 db에 날리는 모든 쿼리를 보여준다
+    org.hibernate.type: trace    #hibernate의 ?에 어떤 값이 들어갔는지 구체적으로 보여준다다
