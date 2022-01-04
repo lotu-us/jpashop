@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 class MemberRepositoryTest {
 
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     @Transactional  //엔터티메니저를 통한 모든 데이터변경은 트랜잭션 안에서 이루어져야한다.
@@ -24,7 +26,7 @@ class MemberRepositoryTest {
 
         //when
         Long saveId = memberRepository.save(member);
-        Member findMember = memberRepository.find(saveId);
+        Member findMember = memberRepository.findOne(saveId);
 
         //then
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
