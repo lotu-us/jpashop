@@ -54,6 +54,6 @@ public class OrderService {
      * 검색
      */
 //    public List<Order> findOrders(OrderSearch orderSearch){
-//
+//          //query dsl같은 동적쿼리 사용하자
 //    }
 }
